@@ -1,5 +1,5 @@
 from numpy.linalg import norm
-from numpy import array as np_array, transpose, dot, mean
+from numpy import array as np_array, transpose, dot, diag
 from math import sqrt
 from pprint import pprint
 
@@ -86,4 +86,14 @@ centered_data_matrix = new_data - mean_vector
 
 from numpy import cov
 
-print((1. / len(new_data)) * dot(transpose(new_data), new_data))
+cov = (1. / len(centered_data_matrix)) * dot(transpose(centered_data_matrix), centered_data_matrix)
+# print(cov)
+
+# 3-f
+from numpy.linalg import eigh
+
+eig_values, eig_vectors = eigh(cov)
+eig_values_diag = diag(eig_values)
+# print(eig_vectors)
+# print(diag(eig_values))
+
