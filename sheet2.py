@@ -99,5 +99,5 @@ s_inverse = matrix([
 eig_values2, eig_vectors2 = eigh(s_inverse * between_class_scatter_matrix2)
 # print(eig_values2) # the second value is higher then the second eigen vector better separates the classes
 
-best_direction_to_separate2 = eig_vectors[1]
-# print(best_direction_to_separate2)
+best_direction_to_separate2 = eig_vectors2[1]
+print(best_direction_to_separate2)
