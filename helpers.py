@@ -56,3 +56,6 @@ def scatter_plot_assignment(assignment):
         color_index += 1
 
     plt.show()
+
+
+

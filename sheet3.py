@@ -26,8 +26,12 @@ assignment_manhattan = k_means(data, 3, 27, manhattan_distance)
 
 # 2-d
 from sklearn.preprocessing import MinMaxScaler
+
 scaler = MinMaxScaler()
 normalized_data = scaler.fit_transform(data)
 
 assignment_normalized = k_means(normalized_data, 3, 1)
 # scatter_plot_assignment(assignment_normalized)
+
+
+
