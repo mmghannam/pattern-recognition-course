@@ -1,5 +1,6 @@
 from numpy import array
-from numpy.linalg import norm
+from numpy.linalg import norm, eigh
+from sklearn.preprocessing import normalize
 
 data_matrix = array([[2, 4],
                      [3, 3],
@@ -42,5 +43,13 @@ import matplotlib.pyplot as plt
 # plt.show()
 
 from networkx import laplacian_matrix, from_numpy_array
-lp_matrix = laplacian_matrix(from_numpy_array(rbf_001)).to_array
+
+lp_matrix = laplacian_matrix(from_numpy_array(rbf_001)).toarray()
 # print(lp_matrix)
+
+eig_values, eig_vectors = eigh(lp_matrix)
+
+projection_matrix = eig_vectors[:, :2]
+
+plt.scatter(*(projection_matrix.T))
+plt.show()

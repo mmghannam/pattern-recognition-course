@@ -58,4 +58,7 @@ def scatter_plot_assignment(assignment):
     plt.show()
 
 
+class BayesianClassifier:
+    def fit(self, data):
+        pass
 
